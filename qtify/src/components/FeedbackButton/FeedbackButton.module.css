@@ -7,7 +7,7 @@
   gap: 10px;
   border-radius: 12px;
   border: 1px;
-  opacity: 0px;
+  /* opacity: 0px; */
   border: 1px solid #34c94b;
   background-color: var(--color-black);
   color: var(--color-primary);
