@@ -1,0 +1,39 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 568px;
+  height: 48px;
+  top: 13px;
+  left: 436px;
+  gap: 0px;
+  border-radius: 8px 8px 8px 8px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+
+  border: 1px solid #121212;
+}
+
+.search-bar input{
+  flex: 1; /* Take up remaining space */
+  height: 100%; /* Make the input fill the height of the parent */
+  border: none; /*Remove default input border */
+  padding: 0 10px; /* Add padding for text input */
+  border-radius: 8px 0px 0px 8px;
+
+}
+
+.search-bar button {
+  height: 100%; /* Make the button fill the height of the parent */
+  background-color: var(--color-white);
+  border: none; /* Remove default button border */
+  padding: 0 10px; /* Add padding for button */
+  border: 1px solid #121212;
+  width: 66px;
+  height: 48px;
+  top: 13px;
+  left: 938px;
+  gap: 0px;
+  border-radius: 0px 8px 8px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+}

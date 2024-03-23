@@ -1,0 +1,5 @@
+.logo {
+    margin-left: 20px; /* Adjust the gap from the left border */
+    display: flex;
+    align-items: center; /* Vertically center the logo */
+  }
