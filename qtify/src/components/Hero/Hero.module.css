@@ -1,0 +1,85 @@
+.hero {
+  width: 100%;
+  background-color: var(
+    --color-black
+  ); /* Use CSS variable for background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: row; */
+  padding: 50px 0;
+  width: 1440px;
+  height: 270px;
+  top: 74px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.heroSection {
+    display: flex;
+  width: 799px;
+  height: 212px;
+  top: 103px;
+  left: 327px;
+  gap: 0px;
+  opacity: 0px;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  /* width: 300px; 
+  height: auto; */
+  margin-bottom: 20px;
+  width: 212px;
+  height: 212px;
+  top: 103px;
+  left: 914px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.textContainer {
+  text-align: center;
+  justify-content: center;
+  color: var(--color-white); /* Adjust text color */
+  width: 556px;
+  height: 100px;
+  top: 171px;
+  left: 327px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.heading {
+  /* font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px; */
+  /* width: 473px; */
+  height: 48px;
+  top: 171px;
+  left: 368px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Poppins;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+  text-align: center;
+  justify-content: center;
+}
+
+.subtext {
+  /* font-size: 18px; */
+  width: 556px;
+  height: 48px;
+  top: 223px;
+  left: 327px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Poppins;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+  text-align: center;
+}
