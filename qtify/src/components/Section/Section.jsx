@@ -1,47 +1,18 @@
-// import React, { useState, useEffect } from 'react';
-// // import axios from 'axios';
 
-// import styles from "./Section.module.css"; 
-// // import {fetchTopAlbums} from "../../api/api"
-
-// const Section = ({ title, fetchAlbums }) => {
-//   const [albums, setAlbums] = useState([]);
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       const data = await fetchAlbums(); // Fetch albums data using the provided function
-//       setAlbums(data);
-//     };
-
-//     fetchData();
-//   }, [fetchAlbums]);
-
-//   return (
-//     <div className={styles.section}>
-//       <div className={styles.header}>
-//         <h2>{title}</h2>
-//         <button>Collpase</button>
-//       </div>
-//       <div className={styles.grid}>
-//         {albums.map(album => (
-//           <Card key={album.id} album={album} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Section;
 
 
 import React, { useState, useEffect } from 'react';
 import Carousel from '../Carousel/Carousel'; // Import the Carousel component
 import styles from './Section.module.css';
 import Card from '../Card/Card'; 
+import { Tabs, Tab } from '@mui/material'
 
-const Section = ({ title, fetchAlbums }) => {
+const Section = ({ title, fetchAlbums,fetchFilters, fetchSongs }) => {
   const [albums, setAlbums] = useState([]);
   const [collapsed, setCollapsed] = useState(true); // Start collapsed by default
+  const [songs, setSongs] = useState([]);
+  const [filters, setFilters] = useState([]);
+  const [selectedFilter, setSelectedFilter] = useState('All');
 
   const toggleCollapse = () => {
     setCollapsed(!collapsed);
@@ -55,6 +26,28 @@ const Section = ({ title, fetchAlbums }) => {
 
     fetchData();
   }, [fetchAlbums]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const genreData = await fetchFilters();
+      setFilters(['All', ...genreData]);
+    };
+
+    fetchData();
+  }, [fetchFilters]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const songsData = await fetchSongs(selectedFilter.toLowerCase());
+      setSongs(songsData);
+    };
+
+    fetchData();
+  }, [selectedFilter, fetchSongs]);
+
+  const handleTabChange = (event, newValue) => {
+    setSelectedFilter(newValue);
+  };
   
 
   return (
@@ -65,10 +58,23 @@ const Section = ({ title, fetchAlbums }) => {
           {collapsed ? 'Show All' : 'Collapse'}
         </button>
       </div>
+      <Tabs value={selectedFilter} onChange={handleTabChange}>
+      {filters.map(genre => (
+        <Tab key={genre} label={genre} value={genre} />
+      ))}
+    </Tabs>
       {collapsed ? (
+        <>
+        
         <div >
           <Carousel albums={albums} />
         </div>
+        {title === 'Songs' && (
+          <div>
+            <Carousel albums={songs} />
+          </div>
+        )}
+        </>
       ) : (
         <div className={styles.grid}>
           {albums.map(album => (

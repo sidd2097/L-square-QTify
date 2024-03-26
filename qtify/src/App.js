@@ -3,7 +3,7 @@ import './App.css';
 import Hero from './components/Hero/Hero';
 import Navbar from './components/Navbar/Navbar';
 import Section from './components/Section/Section';
-import {fetchTopAlbums, fetchNewAlbums} from "./api/api"
+import {fetchTopAlbums, fetchNewAlbums, fetchSongs, fetchFilters} from "./api/api"
 
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
       <Hero/>
       <Section title="Top Albums" fetchAlbums={fetchTopAlbums} />
       <Section title="New Albums" fetchAlbums={fetchNewAlbums} />
+      <Section title="Songs" fetchSongs={fetchSongs} fetchFilters={fetchFilters} />
     </div>
   );
 }
