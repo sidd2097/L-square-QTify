@@ -11,9 +11,9 @@ function App() {
     <div className="App">
       <Navbar/>
       <Hero/>
-      <Section title="Top Albums" fetchAlbums={fetchTopAlbums} />
-      <Section title="New Albums" fetchAlbums={fetchNewAlbums} />
-      <Section title="Songs" fetchSongs={fetchSongs} fetchFilters={fetchFilters} />
+      <Section title="Top Albums" fetchAlbums={fetchTopAlbums} fetchSongs={fetchSongs} fetchFilters={fetchFilters} />
+      <Section title="New Albums" fetchAlbums={fetchNewAlbums} fetchSongs={fetchSongs} fetchFilters={fetchFilters} />
+      <Section title="Songs" fetchAlbums={fetchNewAlbums} fetchSongs={fetchSongs} fetchFilters={fetchFilters} />
     </div>
   );
 }

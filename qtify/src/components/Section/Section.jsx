@@ -7,7 +7,7 @@ import styles from './Section.module.css';
 import Card from '../Card/Card'; 
 import { Tabs, Tab } from '@mui/material'
 
-const Section = ({ title, fetchAlbums,fetchFilters, fetchSongs }) => {
+const Section = ({ title, fetchAlbums, fetchSongs, fetchFilters }) => {
   const [albums, setAlbums] = useState([]);
   const [collapsed, setCollapsed] = useState(true); // Start collapsed by default
   const [songs, setSongs] = useState([]);
@@ -28,12 +28,13 @@ const Section = ({ title, fetchAlbums,fetchFilters, fetchSongs }) => {
   }, [fetchAlbums]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const Data = async () => {
       const genreData = await fetchFilters();
+      console.log(genreData)
       setFilters(['All', ...genreData]);
     };
 
-    fetchData();
+    Data();
   }, [fetchFilters]);
 
   useEffect(() => {
