@@ -31,7 +31,12 @@ const Section = ({ title, fetchAlbums, fetchSongs, fetchFilters }) => {
     const Data = async () => {
       const genreData = await fetchFilters();
       console.log(genreData)
-      setFilters(['All', ...genreData]);
+      if (Array.isArray(genreData)) {
+        setFilters(['All', ...genreData]);
+      } else {
+        console.error('Genre data is not an array:', genreData);
+        // Handle the non-array response accordingly
+      }
     };
 
     Data();
