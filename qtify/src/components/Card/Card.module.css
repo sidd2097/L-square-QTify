@@ -24,6 +24,8 @@
 
 .chip {
   margin-bottom: 10px;
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 .albumName {
