@@ -33,3 +33,11 @@
   padding: 10px;
   text-align: center;
 }
+
+.pill {
+  font-size: 12px;
+  background-color: var(--color-black0);
+  width: max-content;
+  padding: 6px;
+  border-radius: 10px;
+}
